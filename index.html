@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe License 1.0</title>
+    <meta name="description" content="An unconventional license for AI-generated code. Maybe public domain, maybe not. Use freely, vibe responsibly. 🌈✨">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://github.com/jilvin/vibe-license">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            padding: 20px;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+        .github-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: inline-flex;
+            align-items: center;
+            background-color: #f6f8fa;
+            color: black;
+            padding: 6px 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            border: 1px solid #d1d5da;
+        }
+        .github-button img {
+            width: 20px;
+            height: 20px;
+        }
+        #star-count {
+            margin-left: 6px;
+            font-weight: normal;
+            color: #24292e;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const colors = [
+                "#f9f9f9", "#f0f8ff", "#e6ffe6", "#fff5e6", "#ffe6f2",
+                "#ff5733", "#33ff57", "#3357ff", "#ff33a8", "#a833ff", "#33fff5", "#ff8c33", "#ffd633", "#ff3333",
+                "#1abc9c", "#2ecc71", "#3498db", "#9b59b6", "#34495e", "#16a085", "#27ae60", "#2980b9", "#8e44ad", "#2c3e50",
+                "#f39c12", "#e74c3c", "#d35400", "#c0392b", "#bdc3c7", "#7f8c8d", "#ecf0f1", "#95a5a6", "#d5dbdb", "#1b2631",
+                "#6c3483", "#e84393", "#fd79a8", "#fab1a0", "#636e72", "#f8c291", "#ffeaa7", "#fdcb6e", "#d63031", "#74b9ff",
+                "#00cec9", "#55efc4", "#81ecec", "#a29bfe"
+            ];
+            const selectedColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = selectedColor;
+            
+            // Generate a favicon dynamically
+            const canvas = document.createElement("canvas");
+            canvas.width = 32;
+            canvas.height = 32;
+            const ctx = canvas.getContext("2d");
+            ctx.fillStyle = selectedColor;
+            ctx.fillRect(0, 0, 32, 32);
+            
+            const favicon = document.createElement("link");
+            favicon.rel = "icon";
+            favicon.href = canvas.toDataURL();
+            document.head.appendChild(favicon);
+            
+            // Fetch star count from GitHub API
+            fetch("https://api.github.com/repos/jilvin/vibe-license")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("star-count").textContent = data.stargazers_count || 0;
+                })
+                .catch(error => console.error("Error fetching star count:", error));
+        });
+    </script>
+</head>
+<body>
+    <a href="https://github.com/jilvin/vibe-license" class="github-button" target="_blank">
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+        <span id="star-count"></span>
+    </a>
+    <div class="container">
+        <h1>Vibe License 1.0</h1>
+        <p>
+            This code was generated with the help of AI models like ChatGPT. As far as we know:<br>
+            - We don’t own it.<br>
+            - You don’t own it.<br>
+            - Maybe no one owns it.<br>
+            - Maybe everyone does.<br>
+        </p>
+        <p>
+            It might be in the <strong>public domain</strong>. Or it might not be. Who can say?
+        </p>
+        <p>
+            Either way, feel free to use, modify, and share this code at your own risk.
+            No warranties, no guarantees, no take-backs.
+            If it breaks, you get to keep both pieces.
+        </p>
+        <p>
+            By using this code, you agree to just go with the flow.
+        </p>
+        <p><strong>Vibe responsibly.</strong></p>
+        <div class="footer">&copy; 2025 Vibe License Initiative (or maybe not?)</div>
+    </div>
+</body>
+</html>
